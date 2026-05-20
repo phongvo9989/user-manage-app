@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-md shadow">
+      <h2 class="text-2xl font-bold mb-4">{{ email.title }}</h2>
+      <p class="mb-3">{{email.description }}</p>
+      <p class="text-sm text-gray-600">{{email.time}}</p>
+      <div class="mt-2 text-gray-800">
+        Trang thai: {% if email.status %}
+        <span class="text-green-600">Đã xem</span>
+        {% else %}
+        <span class="text-red-600">Chưa xem</span>
+        {% endif %}
+      </div>
+      <a
+        href="{% url 'home' %}"
+        class="inline-block mt-4 text-blue-500 hover:underline"
+        >Quay lại trang chủ</a
+      >
+    </div>
+  </body>
+</html>
